@@ -71,5 +71,36 @@ public class ArrayPro {
                 System.out.print(", ");
                 }
         }
+        System.out.println();
+    //Зубчатые массивы
+        int[][] matrixZ=new int[5][];
+//    matrixZ[0]=new int[1];
+//    matrixZ[1]=new int[2];
+//    matrixZ[2]=new int[3];
+//    matrixZ[3]=new int[4];
+//    matrixZ[4]=new int[5];
+        int min=1,max=10;
+        for (int i = 0; i < matrixZ.length; i++) {
+            matrixZ[i]=new int[random.nextInt(max-min+1)+min];
+        }
+        int[] sumColsZ=new int[max];
+        for(int i = 0; i < matrixZ.length; i++) {
+            int sum=0;
+            for (int j = 0; j < matrixZ[i].length; j++) {
+                matrixZ[i][j]=random.nextInt(10);
+                System.out.printf("%4d", matrixZ[i][j]);
+                sum+=matrixZ[i][j];
+                sumColsZ[j]+=matrixZ[i][j];
+            }
+            System.out.printf(" | Summa: "+sum);
+            System.out.println();
+        }
+        System.out.println("--Summa of columns--");
+        for(int i=0;i<sumColsZ.length;i++){
+            if(i<sumColsZ.length-1){
+                System.out.printf("%4d",sumColsZ[i]);
+                }
+        }
     }
 }
+
