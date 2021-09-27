@@ -1,6 +1,7 @@
 package arraypro;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class ArrayPro {
 
@@ -34,9 +35,41 @@ public class ArrayPro {
         int[] nums2=Arrays.copyOf(nums,7);
         
         System.out.println("nums2="+Arrays.toString(nums2));
+
+        System.out.println("nums="+Arrays.toString(nums));
         nums=nums2;
         System.out.println("nums="+Arrays.toString(nums));
         
         
+      //Многомерные массивы
+        Random random=new Random();
+        int[][] matrix=new int[5][5];
+        for(int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                int a=random.nextInt(20);
+                matrix[i][j]=a;
+                
+            }
+            
+        }
+        int[] sumCols=new int[5];
+        for(int i = 0; i < matrix.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < matrix[i].length; j++) {
+                //System.out.print(matrix[i][j]);
+                System.out.printf("%4d", matrix[i][j]);
+                sum+=matrix[i][j];
+                sumCols[j]+=matrix[i][j];
+            }
+            System.out.println(" | Summa: "+sum);
+            System.out.println();
+        }
+        System.out.println("--Summa of columns--");
+        for(int i=0;i<sumCols.length;i++){
+            System.out.print(sumCols[i]);
+            if(i<sumCols.length-1){
+                System.out.print(", ");
+                }
+        }
     }
 }
