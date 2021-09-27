@@ -66,9 +66,8 @@ public class ArrayPro {
         }
         System.out.println("--Summa of columns--");
         for(int i=0;i<sumCols.length;i++){
-            System.out.print(sumCols[i]);
-            if(i<sumCols.length-1){
-                System.out.print(", ");
+            if(i<sumCols.length){
+                System.out.printf("%4d",sumCols[i]);
                 }
         }
         System.out.println();
@@ -97,10 +96,19 @@ public class ArrayPro {
         }
         System.out.println("--Summa of columns--");
         for(int i=0;i<sumColsZ.length;i++){
-            if(i<sumColsZ.length-1){
+            if(i<sumColsZ.length){
                 System.out.printf("%4d",sumColsZ[i]);
                 }
         }
+        System.out.println();
+        //Строка в Java
+        String str;
+        str="Это строка";
+        System.out.println(str);
+        //Редактирование строки создает новую строку
+        str=str.replace("а","и");
+        System.out.println("str = "+str);
+        
     }
 }
 
